@@ -1,0 +1,26 @@
+{
+  "name": "tw-type",
+  "version": "0.0.1",
+  "description": "A Tailwind CSS plugin for automatically styling plain HTML content with beautiful typographic defaults.",
+  "files": [
+    "src/*.css"
+  ],
+  "repository": "https://github.com/azan-n/tw-type-css",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./lib/tw-type.css -o ./dist/tw-type.css -m",
+    "dev": "astro --root demo dev",
+    "build:demo": "astro --root demo build"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.11",
+    "@tailwindcss/vite": "4.1.11",
+    "astro": "5.12.5"
+  }
+}
