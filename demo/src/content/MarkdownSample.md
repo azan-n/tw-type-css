@@ -2,7 +2,7 @@
 
 By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you _really are_ just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.
 
-The `tw-type-css` plugin is our attempt to give you what typography primitives, without any of the downsides of `@tailwind/typography` like terse colour configuration, and an all or nothing approach with `prose` classes.
+The `tw-type-css` plugin is my attempt to give you what typography primitives, without any of the downsides of `@tailwind/typography` like terse colour configuration, and an all or nothing approach with `prose` classes.
 
 It adds a new `tw-prose` class that you can slap on any block of vanilla HTML content and turn it into a beautiful, well-formatted document:
 
@@ -50,7 +50,7 @@ It's probably important that images look okay here by default as well:
 
 <figure>
   <img
-    src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+    src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?q=80&w=2370&auto=format&fit=crop"
     alt=""
   />
   <figcaption>
@@ -92,25 +92,6 @@ When a heading comes after a paragraph, we need a bit more space, like I already
   I think it probably would've been fine to just use two items but three is definitely not worse, and since I seem to be having no trouble making up arbitrary things to type, I might as well include it. I'm going to press <kbd>Enter</kbd> now.
 
 After this sort of list I usually have a closing statement or paragraph, because it kinda looks weird jumping right to a heading.
-
-## Code should look okay by default.
-
-I think most people are going to use [highlight.js](https://highlightjs.org/) or [Prism](https://prismjs.com/) or something if they want to style their code blocks but it wouldn't hurt to make them look _okay_ out of the box, even with no syntax highlighting.
-
-Here's what a default `tailwind.config.js` file looks like at the time of writing:
-
-```js
-module.exports = {
-  purge: [],
-  theme: {
-    extend: {},
-  },
-  variants: {},
-  plugins: [],
-}
-```
-
-Hopefully that looks good enough to you.
 
 ### What about nested lists?
 
@@ -177,7 +158,7 @@ Well, that's not exactly true, we first released this plugin back in 2020 and it
 
 ## There are other elements we need to style
 
-I almost forgot to mention links, like [this link to the Tailwind CSS website](https://tailwindcss.com). We almost made them blue but that's so yesterday, so we went with dark gray, feels edgier.
+I almost forgot to mention links, like [this link to the Tailwind CSS website](https://tailwindcss.com).
 
 We even included table styles, check it out:
 
@@ -189,19 +170,17 @@ We even included table styles, check it out:
 | Vader                   | Boulder, CO  | Vader Bomb         |
 | Razor Ramon             | Chuluota, FL | Razor's Edge       |
 
-We also need to make sure inline code looks good, like if I wanted to talk about `<span>` elements or tell you the good news about `@tailwindcss/typography`.
+We also need to make sure inline code looks good, like if I wanted to talk about `<span>` elements.
 
 ### Sometimes I even use `code` in headings
 
-Even though it's probably a bad idea, and historically I've had a hard time making it look good. This _"wrap the code blocks in backticks"_ trick works pretty well though really.
-
-Another thing I've done in the past is put a `code` tag inside of a link, like if I wanted to tell you about the [`tailwindcss/docs`](https://github.com/tailwindcss/docs) repository. I don't love that there is an underline below the backticks but it is absolutely not worth the madness it would require to avoid it.
+Another thing I've done in the past is put a `code` tag inside of a link, like if I wanted to tell you about the [`tailwindcss/docs`](https://github.com/tailwindcss/docs) repository. .
 
 #### We haven't used an `h4` yet
 
-But now we have. Please don't use `h5` or `h6` in your content, Medium only supports two heading levels for a reason, you animals. I honestly considered using a `before` pseudo-element to scream at you if you use an `h5` or `h6`.
+But now we have. Please don't use `h6` in your content.
 
-We don't style them at all out of the box because `h4` elements are already so small that they are the same size as the body copy. What are we supposed to do with an `h5`, make it _smaller_ than the body copy? No thanks.
+We don't style them at all out of the box because `h5` elements are already so small that they are the same size as the body copy.
 
 ### We still need to think about stacked headings though.
 

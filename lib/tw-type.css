@@ -1,121 +1,116 @@
+:root {
+  --tw-type-scale-ratio: 1.25;
+  --tw-type-scale-base: 1rem;
+}
+
 /* TODO, use outside Tailwind?? */
 @theme inline {
-  --text-100: 14px;
-  --text-100--line-height: var(--leading-100);
-  --text-200: 16px;
-  --text-200--line-height: var(--leading-200);
-  --text-300: 18px;
-  --text-300--line-height: var(--leading-300);
-  --text-350: clamp(var(--text-300), 17.53px + 0.1406vw, 20px);
-  --text-350--line-height: var(--leading-350);
-  --text-400: clamp(20px, 17.39px + 0.6536vw, 24px);
-  --text-400--line-height: var(--leading-400);
-  --text-500: clamp(22px, 17.06px + 0.98vw, 32px);
-  --text-500--line-height: var(--leading-500);
-  --text-600: clamp(24px, 18.87px + 1.28vw, 40px);
-  --text-600--line-height: var(--leading-600);
-  --text-700: clamp(28px, 23.25px + 1.18vw, 48px);
-  --text-700--line-height: var(--leading-700);
-  --text-800: clamp(32px, 20.69px + 2.84vw, 64px);
-  --text-800--line-height: var(--leading-800);
-  --text-900: clamp(36px, 18.75px + 4.30vw, 72px);
-  --text-900--line-height: var(--leading-900);
-  --text-1000: clamp(40px, 4.21px + 8.95vw, 96px);
-  --text-1000--line-height: var(--leading-1000);
+  --text-100: calc(var(--text-200) / var(--tw-type-scale-ratio));
+  --text-100--line-height: var(--leading-160);
+  --text-200: calc(var(--text-300) / var(--tw-type-scale-ratio));
+  --text-200--line-height: var(--leading-150);
+  --text-300: var(--tw-type-scale-base);
+  --text-300--line-height: var(--leading-150);
+  --text-400: calc(var(--text-300) * var(--tw-type-scale-ratio));
+  --text-400--line-height: var(--leading-150);
+  --text-500: calc(var(--text-400) * var(--tw-type-scale-ratio));
+  --text-500--line-height: var(--leading-130);
+  --text-600: calc(var(--text-500) * var(--tw-type-scale-ratio));
+  --text-600--line-height: var(--leading-120);
+  --text-700: calc(var(--text-600) * var(--tw-type-scale-ratio));
+  --text-700--line-height: var(--leading-120);
+  --text-800: calc(var(--text-700) * var(--tw-type-scale-ratio));
+  --text-800--line-height: var(--leading-110);
+  --text-900: calc(var(--text-800) * var(--tw-type-scale-ratio));
+  --text-900--line-height: var(--leading-110);
+  --text-1000: calc(var(--text-900) * var(--tw-type-scale-ratio));
+  --text-1000--line-height: var(--leading-100);
 
-  --leading-100: 1.5;
-  --leading-200: var(--leading-100);
-  --leading-300: var(--leading-200);
-  --leading-350: 1.3;
-  --leading-400: var(--leading-350);
-  --leading-500: clamp(1.2, 1.30196 - 0.01961vw, 1.3);
-  --leading-600: 1.2;
-  --leading-700: var(--leading-600);
-  --leading-800: var(--leading-700);
-  --leading-900: clamp(1, 1.41026 - 0.03256vw, 1.1);
-  --leading-1000: clamp(1, 1.41026 - 0.03256vw, 1.1);
+  --leading-160: 1.6;
+  --leading-150: 1.5;
+  --leading-130: 1.3;
+  --leading-120: 1.2;
+  --leading-110: 1.1;
+  --leading-100: 1;
 
-  --tracking-100: 0.02em;
-  --tracking-200: 0em;
-  --tracking-300: var(--tracking-200);
-  --tracking-350: var(--tracking-300);
-  --tracking-400: var(--tracking-350);
-  --tracking-500: -0.01em;
-  --tracking-600: -0.02em;
-  --tracking-700: clamp(-0.03em, -0.0102em - 0.0098vw, -0.02em);
-  --tracking-800: clamp(-0.03em, -0.0102em - 0.0098vw, -0.02em);
-  --tracking-900: clamp(-0.03em, -0.0070em - 0.0130vw, -0.02em);
-  --tracking-1000: -0.03em;
-
-  --font-weight-100: 400;
-  --font-weight-200: var(--font-weight-100);
-  --font-weight-300: var(--font-weight-200);
-  --font-weight-350: 500;
-  --font-weight-400: var(--font-weight-350);
-  --font-weight-500: var(--font-weight-400);
-  --font-weight-600: var(--font-weight-500);
-  --font-weight-700: var(--font-weight-600);
-  --font-weight-800: 700;
-  --font-weight-900: var(--font-weight-800);
-  --font-weight-1000: var(--font-weight-900);
-
+  
+  --tracking-003: 0.03em;
+  --tracking-002: 0.02em;
+  --tracking-001: 0.01em;
+  --tracking-000: 0em;
+  
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-700: 700;
 }
 
 /* TODO, using variables here (like with --tw-*) can allow customization for all prose blocks across the project. */
 @utility display {
-  @apply text-1000 leading-1000 tracking-1000;
-  font-weight: var(--font-weight-1000);
+  font-size: var(--text-1000);
+  line-height: var(--leading-100);
+  letter-spacing: calc(-1 * var(--tracking-003));
+  font-weight: var(--font-weight-300);
 }
 
 @utility heading-1 {
-  @apply text-700 leading-700 tracking-700;
-  font-weight: var(--font-weight-700);
+  --tw-type-heading-1-font-weight: var(--font-weight-300); 
+  font-size: var(--text-800);
+  line-height: var(--leading-110);
+  letter-spacing: calc(-1 * var(--tracking-003));
+  font-weight: var(--tw-type-heading-1-font-weight);
 } 
 
 @utility heading-2 {
-  @apply text-600 leading-600 tracking-600;
-  font-weight: var(--font-weight-600);
+  font-size: var(--text-700);
+  line-height: var(--leading-110);
+  letter-spacing: calc(-1 * var(--tracking-003));
+  font-weight: var(--font-weight-500);
 }
 
 @utility heading-3 {
-  @apply text-500 leading-500 tracking-500;
+  font-size: var(--text-600);
+  line-height: var(--leading-120);
+  letter-spacing: calc(-1 * var(--tracking-002));
   font-weight: var(--font-weight-500);
 }
 
 @utility heading-4 {
-  @apply text-400 leading-400 tracking-400;
-  font-weight: var(--font-weight-400);
+  font-size: var(--text-500);
+  line-height: var(--leading-120);
+  letter-spacing: calc(-1 * var(--tracking-002));
+  font-weight: var(--font-weight-700)
 }
 
 @utility heading-5 {
-  @apply text-300 leading-300 tracking-300;
-  font-weight: var(--font-weight-300);
-
-}
-
-@utility heading-6 {
-  @apply text-200 leading-200 tracking-200;
-  font-weight: var(--font-weight-200);
+  font-size: var(--text-400);
+  line-height: var(--leading-130);
+  letter-spacing: calc(-1 * var(--tracking-001));
+  font-weight: var(--font-weight-700);
 }
 
 @utility body-lg {
-  @apply text-300 leading-300 tracking-300;
-  font-weight: var(--font-weight-300);
+  font-size: var(--text-400);
+  line-height: var(--leading-150);
+  letter-spacing: var(--tracking-001);
+  font-weight: var(--font-weight-400);
 }
 
 @utility body-base {
-  @apply text-200 leading-200 tracking-200;
-  font-weight: var(--font-weight-200);
+  font-size: var(--text-300);
+  line-height: var(--leading-150);
+  letter-spacing: var(--tracking-002);
+  font-weight: var(--font-weight-400);
 }
 
 @utility body-sm {
-  @apply text-100 leading-100 tracking-100;
-  font-weight: var(--font-weight-100);
+  font-size: var(--text-200);
+  line-height: var(--leading-160);
+  letter-spacing: var(--tracking-003);
+  font-weight: var(--font-weight-400);
 }
 
 /* TODO Color?? */
-/* TODO Font family */
-
 @utility tw-prose {
   @apply body-base;
 
@@ -148,11 +143,6 @@
     @apply heading-5;
   }
 
-  h6 {
-    --tw-prose-spacing: --spacing(12);
-    @apply heading-6;
-  }
-
   :is(h1, h2, h3) {
     --tw-prose-spacing: --spacing(16);
   }
@@ -174,7 +164,7 @@
     gap: --spacing(2);
     padding: 0;
     margin-inline-start: --spacing(6);
-    @apply leading-300;
+    line-height: var(--leading-150);
   }
 
 
@@ -191,7 +181,7 @@
   }
 
   strong {
-    font-weight: var(--font-weight-1000);
+    font-weight: var(--font-weight-700);
   }
 
   em {
@@ -206,6 +196,7 @@
   }
 
   code {
+    font-family: var(--font-mono);
     white-space: break-spaces;
     padding: --spacing(1) --spacing(2);
   }
@@ -231,7 +222,7 @@
 
   blockquote {
     /* --tw-prose-spacing: ???; */
-    @apply text-300 leading-300;
+    @apply text-300;
     font-weight: var(--font-weight-700);
     padding-block-end: --spacing(8);
     padding-top: --spacing(2);
@@ -249,13 +240,13 @@
 
   figure figcaption {
     --tw-prose-spacing: --spacing(6);
-    @apply text-100 leading-100;
+    @apply text-200;
     font-family: var(--brand-fontStack-monospace);
     color: var(--brand-color-text-muted);
   }
 
   figcaption {
-    @apply text-100 leading-100;
+    @apply text-200;
     font-weight: var(--font-weight-100);
   }
 
@@ -263,7 +254,6 @@
     --tw-prose-spacing: --spacing(16);
     margin-block-start: var(--tw-prose-spacing);
     margin-block-end: var(--tw-prose-spacing);
-    border: 1px solid;
   }
 
   video,
@@ -294,14 +284,13 @@
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    @apply text-200 leading-200;
+    @apply text-200;
   }
 
   table caption {
     text-align: left;
     padding-block-end: --spacing(6);
-    font-weight: var(--font-weight-100);
-    @apply font-100 leading-100;
+    font-weight: var(--font-weight-normal);
   }
 
   table th,
@@ -321,8 +310,9 @@
   }
 
   table th {
-    @apply text-100 leading-100;
-    font-weight: var(--font-weight-400);
+    @apply text-200;
+    line-height: var(--leading-160);
+    font-weight: var(--font-weight-normal);
   }
 
   /* TODO is using border-b here okay?? */
@@ -341,7 +331,7 @@
   }
 
   dt {
-    font-weight: var(--font-weight-900);
+    font-weight: var(--font-weight-bold);
   }
 
   dd {
