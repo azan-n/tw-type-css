@@ -1,2 +1,9 @@
 @import "tailwindcss";
+@theme {
+    --text-*: initial;
+}
 @import "../../lib/tw-type.css";
+
+@utility slider {
+    @apply w-full h-2 bg-slate-700 appearance-none cursor-pointer;
+}
