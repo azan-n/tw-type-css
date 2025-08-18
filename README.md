@@ -1,5 +1,3 @@
-# tw-type-css
-
 A collection of Tailwind CSS v4.0 utilities with typographic primitives. Unlike the all-or-nothing reliance on `prose` in `@tailwind/typography`, this plugin offers both primitives and a `tw-prose` utility.
 
 This package is a replacement for [`@tailwindcss/typography`][Original_Plugin_GitHub]. It embraces the new [CSS-first architecture][TailwindCSS_Custom_Utilities], providing a pure CSS solution without relying on the legacy JavaScript plugin system. Furthermore, unlike the original plugin, this plugin does not make color choices for you.

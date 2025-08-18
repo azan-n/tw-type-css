@@ -1,8 +1,8 @@
 ---
 import "../index.css";
 import { Content as MarkdownSample } from "../content/MarkdownSample.md";
+import { Content as Readme } from "../../../README.md";
 
-// TODO, add controls for ratio and base
 // TODO, add dashboard like interface
 ---
 
@@ -14,7 +14,7 @@ import { Content as MarkdownSample } from "../content/MarkdownSample.md";
 		<title class="">tw-type-css</title>
 	</head>
 
-	<body class="bg-slate-900 text-slate-200 border-slate-500">
+	<body class="bg-neutral-800 text-neutral-200 border-slate-500">
 		<header
 			class="border-b p-4 max-w-6xl mx-auto flex items-center justify-between"
 		>
@@ -29,44 +29,49 @@ import { Content as MarkdownSample } from "../content/MarkdownSample.md";
 				></a
 			>
 		</header>
-		<section class="max-w-6xl mx-auto p-4 border-b">
-			<h2 class="body-base">Scale Controls</h2>
-			<div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-				<!-- Base Size Slider -->
-				<div class="space-y-2">
-					<label for="base-size" class="body-sm">
-						Base Size (--tw-type-scale-base): <span id="base-value">1.0</span>rem
-					</label>
-					<input
-						type="range"
-						id="base-size"
-						min="0.7"
-						max="2.0"
-						step="0.1"
-						value="1.0"
-						class="slider"
-					/>
-				</div>
-
-				<!-- Type Ratio Slider -->
-				<div class="space-y-2">
-					<label for="type-ratio" class="body-sm">
-						Type Ratio (--tw-type-scale-ratio): <span id="ratio-value">1.25</span>
-					</label>
-					<input
-						type="range"
-						id="type-ratio"
-						min="1.00"
-						max="2.00"
-						step="0.01"
-						value="1.25"
-						class="slider"
-					/>
-				</div>
-			</div>
-		</section>
 		<main class="py-16 px-8">
 			<article class="max-w-2xl mx-auto tw-prose">
+				<Readme />
+				<section class="mx-auto p-4 border-b">
+					<h2 class="body-base">Scale Controls</h2>
+					<div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+						<!-- Base Size Slider -->
+						<div class="space-y-2 m-0">
+							<label for="base-size" class="body-sm">
+								Base Size (--tw-type-scale-base): <span
+									id="base-value">1.0</span
+								>rem
+							</label>
+							<input
+								type="range"
+								id="base-size"
+								min="0.7"
+								max="2.0"
+								step="0.1"
+								value="1.0"
+								class="slider"
+							/>
+						</div>
+
+						<!-- Type Ratio Slider -->
+						<div class="space-y-2 m-0">
+							<label for="type-ratio" class="body-sm">
+								Type Ratio (--tw-type-scale-ratio): <span
+									id="ratio-value">1.25</span
+								>
+							</label>
+							<input
+								type="range"
+								id="type-ratio"
+								min="1.00"
+								max="2.00"
+								step="0.01"
+								value="1.25"
+								class="slider"
+							/>
+						</div>
+					</div>
+				</section>
 				<MarkdownSample />
 			</article>
 		</main>
@@ -77,7 +82,9 @@ import { Content as MarkdownSample } from "../content/MarkdownSample.md";
 		const baseValueDisplay = document.getElementById("base-value");
 
 		baseSizeSlider?.addEventListener("input", function () {
+			// @ts-expect-error
 			const value = this.value;
+			// @ts-expect-error
 			baseValueDisplay.textContent = value;
 			document.documentElement.style.setProperty(
 				"--tw-type-scale-base",
@@ -90,7 +97,9 @@ import { Content as MarkdownSample } from "../content/MarkdownSample.md";
 		const ratioValueDisplay = document.getElementById("ratio-value");
 
 		typeRatioSlider?.addEventListener("input", function () {
+			// @ts-expect-error
 			const value = this.value;
+			// @ts-expect-error
 			ratioValueDisplay.textContent = value;
 			document.documentElement.style.setProperty(
 				"--tw-type-scale-ratio",

@@ -1,31 +1,3 @@
-> Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.
-
-By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you _really are_ just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.
-
-The `tw-type-css` plugin is my attempt to give you what typography primitives, without any of the downsides of `@tailwind/typography` like terse colour configuration, and an all or nothing approach with `prose` classes.
-
-It adds a new `tw-prose` class that you can slap on any block of vanilla HTML content and turn it into a beautiful, well-formatted document:
-
-```html
-<article class="tw-prose">
-  <h1>Garlic bread with cheese: What the science tells us</h1>
-  <p>
-    For years parents have espoused the health benefits of eating garlic bread with cheese to their
-    children, with the food earning such an iconic status in our culture that kids will often dress
-    up as warm, cheesy loaf for Halloween.
-  </p>
-  <p>
-    But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
-    springing up around the country.
-  </p>
-  <!-- ... -->
-</article>
-```
-
-For more information about how to use the plugin and the features it includes, [read the documentation](https://github.com/azan-n/tw-type-css).
-
----
-
 ## What to expect from here on out
 
 What follows from here is just a bunch of absolute nonsense written to dogfood the plugin itself. It includes every sensible typographic element I could think of, like **bold text**, unordered lists, ordered lists, code blocks, block quotes, _and even italics_.
