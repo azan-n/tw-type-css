@@ -9,7 +9,7 @@ This package is a replacement for [`@tailwindcss/typography`][Original_Plugin_Gi
     ```
 2. Add the following line to your root CSS file 
     ```css
-   @import "tw-animate-css";
+   @import "tw-type-css";
     ```
 3. Start using the utilities
     ```html
